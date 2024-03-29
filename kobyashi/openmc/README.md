@@ -1,6 +1,6 @@
 All I need is time elapsed to run
 ```
-N_list = np.logspace(5, 9, 9).astype(int)
+N_list = np.logspace(5, 9, 10).astype(int)
 ```
 
 If you could save the results in an `.npz` file that would be ideal which would look something like

@@ -3,8 +3,8 @@ import os
 import timeit
 import time
 
-N_list = np.logspace(5, 7, 3).astype(int)
-runtimes = np.zeros(9)
+N_list = np.logspace(5, 9, 10).astype(int)
+runtimes = np.zeros(10)
 
 
 for i in range( N_list.size ):
