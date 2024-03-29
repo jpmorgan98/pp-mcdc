@@ -1,0 +1,31 @@
+#!/bin/tcsh
+##### These lines are for Slurm
+#SBATCH -N 1
+#SBATCH -J mcdc_kobiashy_runtimes
+#SBATCH -t 12:00:00
+#SBATCH -p pbatch
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=morgajoa@oregonstate.edu
+
+##### These are shell commands
+date
+
+module list
+
+conda activate mcdc-quartz
+
+conda list
+
+which python
+
+echo ""
+echo ""
+echo ""
+
+python run.py
+
+echo ""
+echo ""
+echo "*****JOB COMPLETE******"
+echo ""
+echo ""
