@@ -1,0 +1,31 @@
+#!/bin/tcsh
+
+### LSF syntax
+#BSUB -nnodes 1                   #number of nodes
+#BSUB -G morgan83
+#BSUB -W 480                      #walltime in minutes
+#BSUB -J mcdc_gpu_kobiashy_runtimes  #name of job
+#BSUB -q pbatch                   #queue to use
+#BSUB -N
+
+### Shell scripting
+date; hostname
+echo -n 'JobID is '; echo $LSB_JOBID
+module list
+echo ""
+nvidia-smi
+conda activate mcdc-gpu
+conda list
+which python
+echo ""
+echo ""
+echo ""
+
+### Launch parallel executable
+python run.py 
+
+echo ""
+echo ""
+echo "*****JOB COMPLETE******"
+echo ""
+echo ""
