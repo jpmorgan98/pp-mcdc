@@ -16,7 +16,7 @@ module list
 
  
 
-conda activate mcdc-gpu
+conda activate mcdc-quartz
 
 conda list
 
