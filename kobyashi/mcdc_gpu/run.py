@@ -12,9 +12,10 @@ for i in range( N_list.size ):
 
    start = time.time()
 
-   os.system("srun -n 36 python input.py"
-        + " --mode=numba --N_particle=%i"%int(N_list[i])
-        + " --output=output_%i"%int(N_list[i]))
+   os.system("python input.py"
+        + " --mode=numba --target=gpu --N_particle=%i"%int(N_list[i])
+        + " --output=output_%i"%int(N_list[i])
+        + "--no-progress-bar")
 
    end = time.time()
    print(start-end)
@@ -24,5 +25,6 @@ for i in range( N_list.size ):
    print()
 
 print(runtimes)
+print(N_list)
 
-np.savez('mcdc_kobyashi_runtimes.npz', N_list = N_list, runtimes=runtimes)
+np.savez('mcdc_gpu_kobyashi_runtimes.npz', N_list = N_list, runtimes=runtimes)

@@ -16,7 +16,8 @@ for i in range( N_list.size ):
 
    os.system("srun -n 36 python input.py"
         + " --mode=numba --target=gpu --N_particle=%i"%int(N_list[i])
-        + " --output=output_%i"%int(N_list[i]))
+        + " --output=output_%i"%int(N_list[i])
+        + " --no-progress-bar")
 
    end = time.time()
    print(start-end)
