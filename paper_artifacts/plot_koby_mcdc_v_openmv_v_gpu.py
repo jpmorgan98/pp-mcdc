@@ -35,6 +35,12 @@ cpu_mcdc = np.array([15.96044922,    13.35105252,    21.37297511,    36.76940751
                             84.33231568,   217.58568048,  589.87280846,  1642.11868,
                             4496.13040018, 12547.16239882]) 
 
+cpu_copmile_times = np.array([59.07, 56.26, 56.05, 55.86, 56.03, 56.05, 56.49, 56.50, 56.62, 56.05])
+# throwing out first compilation time, for compiler spinup 
+cpu_avg_copmile_time = np.mean(cpu_copmile_times[1:])
+cpu_compile_time = cpu_avg_copmile_time*np.ones(10)
+
+
 
 gpu_copmile_times = np.array([59.07, 56.26, 56.05, 55.86, 56.03, 56.05, 56.49, 56.50, 56.62, 56.05])
 # throwing out first compilation time, for compiler spinup 
