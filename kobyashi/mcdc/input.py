@@ -69,7 +69,7 @@ mcdc.tally(
 
 # Setting
 mcdc.setting(N_batch=10, progress_bar=False)
-mcdc.implicit_capture()
+#mcdc.implicit_capture()
 
 # Run
 mcdc.run()

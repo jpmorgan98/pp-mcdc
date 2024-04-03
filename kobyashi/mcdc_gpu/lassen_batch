@@ -2,7 +2,6 @@
 
 ### LSF syntax
 #BSUB -nnodes 1                   #number of nodes
-#BSUB -G morgan83
 #BSUB -W 480                      #walltime in minutes
 #BSUB -J mcdc_gpu_kobiashy_runtimes  #name of job
 #BSUB -q pbatch                   #queue to use

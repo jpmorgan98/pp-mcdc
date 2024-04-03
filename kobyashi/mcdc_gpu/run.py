@@ -13,9 +13,10 @@ for i in range( N_list.size ):
    start = time.time()
 
    os.system("python input.py"
-        + " --mode=numba --target=gpu --N_particle=%i"%int(N_list[i])
+        + " --mode=numba --target=gpu --N_particle=%i "%int(N_list[i])
+        + " --no-progress-bar "
         + " --output=output_%i"%int(N_list[i])
-        + "--no-progress-bar")
+        )
 
    end = time.time()
    print(start-end)
