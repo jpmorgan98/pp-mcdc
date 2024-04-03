@@ -24,9 +24,9 @@ gpu_mcdc_data = np.array([200.6173296,   198.0095706,   196.53112364,  201.75874
 
 # V100 Lassen GPU data with out implicit capture
 N_particles_gpu = N_particles
-gpu_mcdc_data = np.array([200.6173296,   198.0095706,   196.53112364,  201.75874662,
-                          209.82980871, 238.05999756,  318.33002305,  529.6794126,
-                          1130.28965092, 2788.41011333])
+gpu_mcdc_data = np.array([200.31790972, 196.38998604, 196.0286355, 196.46965742,
+                          197.45999694, 200.821872, 212.55772901, 238.27978778,
+                          316.05001473, 529.82965326])
 
 plt.figure()
 plt.plot(N_particles, cpu_mcdc_data, '-*r', label='36 Core CPU')
