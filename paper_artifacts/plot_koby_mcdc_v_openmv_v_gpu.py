@@ -5,12 +5,24 @@ import matplotlib.pyplot as plt
 N_particles = np.logspace(5, 9, 10).astype(int)
 #N_particles = N_particles[:-2]
 
-#without implicit capture
+# with implicit capture
+# The last two particle counts where DNF even with a whole 12hr allocation on quartz (the max)
+cpu_mcdc_data = np.array([2.30908818e+01, 3.52797744e+01, 7.68255820e+01, 1.92401531e+02, 
+                          5.15599523e+02, 1.48727268e+03, 3.90907587e+03, 1.10168888e+04,
+                          ])
+
+# 36 Quartze cores without implicit capture
 cpu_mcdc_data = np.array([15.96044922,    13.35105252,    21.37297511,    36.76940751,
                             84.33231568,   217.58568048,  589.87280846,  1642.11868,
                             4496.13040018, 12547.16239882]) 
 
-# Data from with implicit capture
+# V100 Lassen GPU data with implicit capture
+N_particles_gpu = N_particles
+gpu_mcdc_data = np.array([200.6173296,   198.0095706,   196.53112364,  201.75874662,
+                          209.82980871, 238.05999756,  318.33002305,  529.6794126,
+                          1130.28965092, 2788.41011333])
+
+# V100 Lassen GPU data with out implicit capture
 N_particles_gpu = N_particles
 gpu_mcdc_data = np.array([200.6173296,   198.0095706,   196.53112364,  201.75874662,
                           209.82980871, 238.05999756,  318.33002305,  529.6794126,
