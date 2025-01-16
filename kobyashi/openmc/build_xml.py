@@ -102,13 +102,14 @@ mesh.lower_left = (0.0, 0.0)
 mesh.upper_right = (60.0, 100.0)
 
 # Create a mesh filter that can be used in a tally
-mesh_filter = openmc.MeshFilter(mesh)
-time_filter = openmc.TimeFilter(np.linspace(0.0, 200.0, 21))
+time_grid = np.linspace(0.0, 200.0, 21)
+mesh_filter = openmc.TimedMeshFilter(mesh, time_grid)
+
 
 # Now use the mesh filter in a tally and indicate what scores are desired
 mesh_tally = openmc.Tally(name="Mesh tally")
-mesh_tally.filters = [time_filter, mesh_filter]
-mesh_tally.estimator = 'collision'
+mesh_tally.filters = [mesh_filter]
+mesh_tally.estimator = 'tracklength'
 mesh_tally.scores = ['flux']
 
 # Instantiate a Tallies collection and export to XML
